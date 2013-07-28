@@ -15,7 +15,10 @@
         <div>
           Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
         </div>
-        <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
+        <div class="error_message">
+          El ID Herbalife o contraseña que ingresó, no son validos.
+        </div>
+        <form action="<?php echo base_url('main/formulario'); ?>" method="get" id="login">
           <div>
             <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="" id="id_herbalife" />
           </div>
@@ -28,4 +31,3 @@
     </div>
   </body>
 </html>
-
