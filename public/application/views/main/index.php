@@ -12,6 +12,7 @@
         </a>
       </header>
       <section>
+        <img src="http://herbalife.hen/statics/images/botones/login.png" />
         <div>
           Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
         </div>

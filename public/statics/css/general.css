@@ -1,2 +1,11 @@
+body { background: url(/statics/images/botones/bg-general.png); }
 #login div label { width: 150px; display: inline-block; }
-#login input[type="text"] { background: url(/statics/images/botones/bg-input.png) repeat-x; height: 52px; border: none; }
+#login input[type="text"] { background: url(/statics/images/botones/bg-input.png) repeat-x; height: 52px; border: none;
+  width: 320px; border: 1px solid #eeeeee; 
+  -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;}
+#login input[type="submit"] { background: url(/statics/images/botones/bg-submit.png) repeat-x; 
+border: 1px #71A501 solid; height: 46px; width: 160px; -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px; }
