@@ -1,1 +1,2 @@
 #login div label { width: 150px; display: inline-block; }
+#login input[type="text"] { background: url(/statics/images/botones/bg-input.png) repeat-x; height: 52px; border: none; }
