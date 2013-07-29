@@ -13,17 +13,17 @@
       </header>
       <section>
         <img src="http://herbalife.hen/statics/images/botones/login.png" />
-        <div>
+        <p class="login_message">
           Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
-        </div>
+        </p>
         <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
-            <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="" id="id_herbalife" />
+            <input type="text" name="id_herbalife" value="" id="id_herbalife" placeholder="ID HERBALIFE" />
           </div>
           <div>
-            <label for="password">Contraseña</label><input type="password" name="password" value="" id="password" />
+            <input type="password" name="password" value="" id="password" placeholder="Contraseña" />
           </div>
-          <div><input type="submit" value="Entrar &rarr;"></div>
+          <div class="login_box"><input type="submit" value="Entrar &rarr;"></div>
         </form>
       </section>
     </div>
