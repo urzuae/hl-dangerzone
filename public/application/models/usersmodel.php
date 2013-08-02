@@ -14,4 +14,12 @@ class UsersModel extends HL_Model
     if(!$result) return false;
     return $result[0];
   }
+  
+  public function select_by_id($id)
+  {
+    $query = $this->db->get_where($this->table, array('id_herbalife' => $id));
+    $row = $query->result_array();
+    if(!$row) return false;
+    return $row[0];
+  }
 }

@@ -58,15 +58,15 @@ class HL_Controller extends CI_Controller implements ArrayAccess
           echo $this->load->view($this->view,$this->view_data,true);
   }
   
-  public function check_login()
+  public function user_loged_in()
   {
-    if(!($this->session->userdata('email') && $this->session->userdata('current_session')))
+    if(!($this->session->userdata('id_herbalife') && $this->session->userdata('current_session')))
       return false;
     else
       return true;
   }
 
-  public function user_loged_in()
+  public function check_login()
   {
     if(!$this->user_loged_in())
       redirect(base_url());

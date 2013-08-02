@@ -13,17 +13,14 @@
       </header>
       <section>
         <p class="login_message">
-          Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
+          
         </p>
         <div class="error_message">
-          El ID Herbalife o contraseña que ingresó, no son válidos.
+          El ID Herbalife que ingresó no es válido.
         </div>
         <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
             <input type="text" name="id_herbalife" value="" id="id_herbalife" placeholder="ID HERBALIFE" />
-          </div>
-          <div>
-            <input type="password" name="password" value="" id="password" placeholder="Contraseña" />
           </div>
           <div>
             <input type="submit" value="Entrar">
