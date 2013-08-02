@@ -1,15 +1,16 @@
-body { background: url(/statics/images/botones/bg-general.png); }
+html { font-family: Arial Rounded, sans-serif; }
+body { background: url(../images/backgrounds/bg-body.png) repeat-x #f9f5ba; }
 header { width: 960px; margin: 10px auto; text-align: center; }
-section { width: 960px; margin: 0 auto; text-align: center; border: 1px solid #f2f2f2; background: #fff;
+section { width: 480px; margin: 0 auto; text-align: center;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-p.login_message { color: #555; font-size: 16px; }
+p.login_message { color: #555; font-size: 16px; margin: 35px 10px; }
 #login div label { width: 150px; display: inline-block; }
 #login input { padding: 0px; }
 #login input[type="text"], #login input[type="password"] { 
-  background: url(/statics/images/botones/bg-input.png) repeat-x; height: 52px; border: none;
+  background: url(../images/botones/bg-input.png) repeat-x; height: 52px; border: none;
     width: 320px; border: 1px solid #eeeeee; 
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -22,9 +23,8 @@ p.login_message { color: #555; font-size: 16px; }
 #login input[type="submit"] { 
   color: #fff;
   font-size: 17px;
-  background: url(/statics/images/botones/bg-submit.png) repeat-x; 
+  background: url(../images/botones/bg-submit.png) repeat-x; 
   border: 1px #71A501 solid; height: 46px; width: 160px; -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; 
 }
-#login div.login_box { background: #f2f2f2; padding: 15px 0;}

@@ -2,32 +2,35 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="statics/css/general.css" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url('statics/css/general.css') ; ?>" type="text/css" />
   </head>
   <body>
     <div id="container">
       <header>
         <a href="<?php echo base_url(); ?>">
-          <img src="<?php echo base_url('statics/images/misc/logo.jpg'); ?>" alt="herbalife" />
+          <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" />
         </a>
       </header>
       <section>
-        <div>
+        <p class="login_message">
           Por favor registra tu nombre de usuario y contraseña con la que ingresas en tu página de herbalife®.
-        </div>
+        </p>
         <div class="error_message">
-          El ID Herbalife o contraseña que ingresó, no son validos.
+          El ID Herbalife o contraseña que ingresó, no son válidos.
         </div>
-        <form action="<?php echo base_url('main/formulario'); ?>" method="get" id="login">
+        <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
-            <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="" id="id_herbalife" />
+            <input type="text" name="id_herbalife" value="" id="id_herbalife" placeholder="ID HERBALIFE" />
           </div>
           <div>
-            <label for="password">Contraseña</label><input type="password" name="password" value="" id="password" />
+            <input type="password" name="password" value="" id="password" placeholder="Contraseña" />
           </div>
-          <div><input type="submit" value="Entrar &rarr;"></div>
+          <div>
+            <input type="submit" value="Entrar">
+          </div>
         </form>
       </section>
     </div>
   </body>
 </html>
+
