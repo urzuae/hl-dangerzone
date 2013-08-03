@@ -44,6 +44,27 @@ CREATE TABLE `Companion` (
 /*!40000 ALTER TABLE `Companion` ENABLE KEYS */;
 
 --
+-- Table structure for table `Countries`
+--
+
+DROP TABLE IF EXISTS `Countries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Countries` (
+  `id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Countries`
+--
+
+/*!40000 ALTER TABLE `Countries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Countries` ENABLE KEYS */;
+
+--
 -- Table structure for table `Users`
 --
 
@@ -68,10 +89,11 @@ CREATE TABLE `Users` (
   `visa_due_date` date NOT NULL,
   `telephone` varchar(255) NOT NULL,
   `mobile` varchar(255) NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_herbalife` (`id_herbalife`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,6 +101,7 @@ CREATE TABLE `Users` (
 --
 
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+INSERT INTO `Users` VALUES (1,'09700049','5f4dcc3b5aa765d61d8327deb882cf99','ALEJANDRO ENRIQUE RODRIGUEZ TORO','',1,'venezolano','0000-00-00',0,'','','','0000-00-00','','0000-00-00','','',1);
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -90,4 +113,4 @@ CREATE TABLE `Users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-07-29  3:05:32
+-- Dump completed on 2013-08-03  3:23:48

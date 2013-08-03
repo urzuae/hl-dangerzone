@@ -1,4 +1,5 @@
 .DS_Store
+.swp
 
 public/application/cache/*
 !public/application/cache/index.html
