@@ -14,7 +14,7 @@
         <div>
           Datos de Registro
         </div>
-        <form action="<?php echo base_url('main/formulario'); ?>" method="get">
+        <form action="<?php echo base_url('main/formulario'); ?>" method="post" id="contact_info">
           <div>
             <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="<?php echo $user['id_herbalife']; ?>" id="id_herbalife" />
           </div>

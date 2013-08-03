@@ -1,4 +1,4 @@
 html { font-family: Arial Rounded, sans-serif; }
 body { background: url(../images/backgrounds/bg-body.png) repeat-x #f9f5ba; }
 img { border: none; }
-#contact_info label { display: inline-block; width: 200px; }
+img.logo_header { height: 200px;}
