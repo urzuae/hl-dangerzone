@@ -31,4 +31,11 @@ class Main extends HL_Controller
       $this->view = 'main/sign_in';
     }
   }
+  
+  public function sign_out()
+  {
+    $user_data = array('id_herbalife' => '', 'current_session' => '', 'password' => '');
+    $this->session->unset_userdata($user_data);
+    redirect(base_url());
+  }
 }

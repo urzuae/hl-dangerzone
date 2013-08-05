@@ -10,6 +10,9 @@
         <a href="<?php echo base_url(); ?>">
           <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" style="height: 132px; "/></a>
       </header>
+      <div>
+        <a href="<?php echo base_url('main/sign_out'); ?>">Sign out</a>
+      </div>
       <section>
         <div>
           Datos de Registro
