@@ -15,6 +15,12 @@ class Main extends HL_Controller
     $this->view = 'main/formulario';
   }
   
+  public function save()
+  {
+    print_r($this->input->post());
+    die();
+  }
+  
   public function sign_in()
   {
     $id = $this->input->post('id_herbalife');

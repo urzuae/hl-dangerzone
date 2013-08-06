@@ -1,4 +1,21 @@
+* { margin: 0; padding: 0}
 html { font-family: Arial Rounded, sans-serif; }
-body { background: url(../images/backgrounds/bg-body.png) repeat-x #f9f5ba; }
+body {  }
 img { border: none; }
-#contact_info label { display: inline-block; width: 200px; }
+header { background: url(../images/backgrounds/bg-header.png) repeat-x; height: 128px;}
+#main_container { background: #bad853; }
+h2 { color: #c8c8c8; font-size: 15px; margin: 25px 0;}
+#sidebar { background: #bad853; width: 203px; float: left; border-top: 3px solid #8ba23e; }
+#nav li { height: 30px; padding-top: 8px; border-bottom: 1px solid #cfe487; }
+#nav li a { text-decoration: none; font-family: Arial, sans-serif; color: #fff; font-size: 12px; padding-left: 40px; margin-left: 10px; }
+#nav li.active { background: url('../images/backgrounds/bg-list.png') no-repeat; }
+#nav li a.general { background: url(../images/botones/pencil.png) no-repeat; }
+#nav li a.first { background: url(../images/botones/first-companion.png) no-repeat;  color: #c3c3c3;}
+#nav li a.second { background: url(../images/botones/second-companion.png) no-repeat; }
+#nav li a.third { background: url(../images/botones/third-companion.png) no-repeat; }
+#nav li a.exit { background: url(../images/botones/exit.png) no-repeat; }
+#main_content { margin-left: 203px; border-top: 3px solid #bfbfbf; background: #fff; padding-bottom: 20px; }
+#contact_info div { margin: 20px; }
+#contact_info label { display: inline-block; width: 232px; text-align: right; margin-right: 10px; color: #c3c3c3; }
+#contact_info input[type="text"] { background: url(../images/botones/bg-form-input.png) no-repeat; border: none; width: 232px; height: 23px; color: #c3c3c3; }
+#contact_info input[type="submit"] { background: url(../images/botones/bg-form-submit.png) no-repeat; border: none; width: 164px; height: 38px; color: #fff; font-size: 14px; }
