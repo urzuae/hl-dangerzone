@@ -7,8 +7,12 @@
     <script type="text/javascript" src="http://localhost/validamesta/src/validamesta.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
+        //$('#contact_info').validamesta();
         $('#contact_info').validamesta();
-        $('#contact_info').validamesta('validate');
+        $('#contact_info').submit(function() { 
+          $(this).data('validamesta').validate();
+          return false;
+        });
       });
     </script>
   </head>
@@ -16,7 +20,7 @@
     <div id="container">
       <header>
         <a href="<?php echo base_url(); ?>">
-          <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" style="height: 132px; "/></a>
+          <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" class="logo"/></a>
       </header>
       <div id="main_container">
         <div id="sidebar">
