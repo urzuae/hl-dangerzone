@@ -16,7 +16,7 @@
           
         </p>
         <div class="error_message">
-          El ID Herbalife que ingresó no es válido.
+          El ID de Herbalife que ha ingresado no se encuentra, inténtelo de nuevo.
         </div>
         <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
