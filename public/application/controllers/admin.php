@@ -9,19 +9,18 @@ class Admin extends HL_Controller
     $this->view = 'admin/index'; 
   }
 
-  public function search()
+  public function login()
   {
-    $this->check_authorization();
     $this->template_file = 'template/general';
-    $this->view = 'admin/search';
+    $this->view = 'admin/login';
   }
   
   public function user()
   {
     $id_hl = $this->input->get('id_herbalife');
-    $user = $this['users']->select_by_id($id_hl);
-    print_r(json_encode($user));
-    die();
+    $user = $this['beneficiarios']->select_by_id($id_hl);
+    $this->view_data['user'] = $user;
+    $this->view = 'admin/user';
   }
 
   public function sign_in()
@@ -33,18 +32,18 @@ class Admin extends HL_Controller
     {
       $userdata = array('id_herbalife' => $id, 'current_session' => md5(time()), 'is_admin' => 1);
       $this->session->set_userdata($userdata);
-      redirect(base_url('admin/search'));
+      redirect(base_url('admin'));
     }
     else
     {
       $this->template_file = 'template/general';
-      $this->view = 'main/index';
+      $this->view = 'admin/sign_in';
     }
   }
 
   function check_authorization()
   {
-    if(!($this->user_loged_in() && $this->session->userdata('is_admin') == 1)) 
-      redirect(base_url());
+    if(!($this->user_loged_in() && $this->session->userdata('is_admin') == 1))
+      redirect(base_url('admin/login'));
   }
 }

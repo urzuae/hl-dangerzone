@@ -3,8 +3,8 @@ class Main extends HL_Controller
 {
   public function index()
   {
-    $this->user_loged_in() ? redirect(base_url('main/formulario')): false;
-    $this->template_file = 'template/general';
+    $this->check_login();
+    $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife'));
     $this->view = 'main/index';
   }
   
@@ -20,6 +20,13 @@ class Main extends HL_Controller
     print_r($this->input->post());
     die();
   }
+
+  public function login()
+  {
+    $this->user_loged_in() ? redirect(base_url()) : false;
+    $this->template_file = 'template/general';
+    $this->view = 'main/login';
+  }
   
   public function sign_in()
   {
@@ -29,7 +36,7 @@ class Main extends HL_Controller
     {
       $userdata = array('id_herbalife' => $id, 'current_session' => md5(time()));
       $this->session->set_userdata($userdata);
-      redirect(base_url('main/formulario'));
+      redirect(base_url());
     }
     else
     {
@@ -42,6 +49,6 @@ class Main extends HL_Controller
   {
     $user_data = array('id_herbalife' => '', 'current_session' => '', 'password' => '');
     $this->session->unset_userdata($user_data);
-    redirect(base_url());
+    redirect(base_url('main/login'));
   }
 }

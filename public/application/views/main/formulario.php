@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('statics/css/general.css'); ?>" type="text/css" />
     <script type="text/javascript" src="<?php echo base_url('statics/js/jquery.js'); ?>"></script>
-    <script type="text/javascript" src="http://localhost/validamesta/src/validamesta.js"></script>
+    <!--<script type="text/javascript" src="http://localhost/validamesta/src/validamesta.js"></script>-->
     <script type="text/javascript">
-      $(document).ready(function() {
+      /*$(document).ready(function() {
         //$('#contact_info').validamesta();
         $('#contact_info').validamesta();
         $('#contact_info').submit(function() { 
           $(this).data('validamesta').validate();
           return false;
         });
-      });
+      });*/
     </script>
   </head>
   <body>
@@ -42,10 +42,12 @@
               <label for="name">Nombre(s)</label><input type="text" name="name" value="<?php echo $user['name']; ?>" id="name" />
             </div>
             <div>
-              <label for="gender">Género</label><input type="radio" name="gender" value="1" />H <input type="radio" name="gender" value="2" />M
+              <label for="gender">Género</label>
+              <input type="radio" name="gender" value="1" />H 
+              <input type="radio" name="gender" value="2" />M
             </div>
             <div>
-              <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="" id="nationality" />
+              <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="<?php echo $user['nationality']; ?>" id="nationality" />
             </div>
             <div>
               <label for="date_birth">Fecha de Nacimiento</label><input type="text" name="date_birth" value="" id="date_birth" />
