@@ -3,7 +3,8 @@ html { font-family: Arial Rounded, sans-serif; }
 body {  }
 img { border: none; }
 header { background: url(../images/backgrounds/bg-header.png) repeat-x; height: 128px;}
-.logo { height: 128px; position: absolute; right: 30px;}
+.herbalife { position: absolute; top: 60px; left: 15px; }
+.logo { height: 128px; position: absolute; right: 20px;}
 #main_container { background: #bad853; }
 h2 { color: #c8c8c8; font-size: 15px; margin: 25px 0;}
 #sidebar { background: #bad853; width: 203px; float: left; border-top: 3px solid #8ba23e; }

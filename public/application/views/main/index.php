@@ -20,6 +20,7 @@
     <div id="container">
       <header>
         <a href="<?php echo base_url(); ?>">
+          <img src="<?php echo base_url('statics/images/misc/herbalife.png'); ?>" alt="herbalife" class="herbalife" />
           <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" class="logo"/></a>
       </header>
       <div id="main_container">
@@ -42,21 +43,25 @@
               <label for="name">Nombre(s)</label><input type="text" name="name" value="<?php echo $user['name']; ?>" id="name" />
             </div>
             <div>
-              <label for="gender">Género</label>
-              <input type="radio" name="gender" value="1" />H 
-              <input type="radio" name="gender" value="2" />M
+              <label for="paternal_last_name">Apellido Paterno</label><input type="text" name="paternal_last_name" value="<?php echo $user['paternal_last_name']; ?>" id="paternal_last_name" />
+            </div>
+            <div>
+              <label for="maternal_last_name">Apellido Materno</label><input type="text" name="maternal_last_name" value="<?php echo $user['maternal_last_name']; ?>" id="maternal_last_name" />
+            </div>
+            <div>
+              <label for="gender">Género</label><input type="text" name="gender" value="<?php echo $user['gender']; ?>" id="gender" />
             </div>
             <div>
               <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="<?php echo $user['nationality']; ?>" id="nationality" />
             </div>
             <div>
-              <label for="date_birth">Fecha de Nacimiento</label><input type="text" name="birthdate" value="<?php echo $user['birthday']; ?>" id="birthdate" />
+              <label for="birthday">Fecha de Nacimiento</label><input type="text" name="birthday" value="<?php echo $user['birthday']; ?>" id="birthday" />
             </div>
             <div>
-              <label for="team_level">Nivel de Equipo</label><input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" />
+              <label for="team_level">Equipo</label><input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" />
             </div>
             <div>
-              <label for="residence_country">País de residencia</label><input type="text" name="country" value="<?php echo $user['country']; ?>" id="country" />
+              <label for="country">País de residencia</label><input type="text" name="country" value="<?php echo $user['country']; ?>" id="country" />
             </div>
             <div>
               <label for="passport">#Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
@@ -81,8 +86,7 @@
             </div>
             <div>
               <label></label>
-              <input type="submit" value="Guardar" name="submit" />
-              <input type="submit" value="Confirmar" name="submit" />
+              <input type="submit" value="Continuar" name="submit" />
             </div>
           </form>
         </section>
