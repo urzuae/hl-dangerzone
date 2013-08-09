@@ -25,12 +25,12 @@ class Admin extends HL_Controller
 
   public function sign_in()
   {
-    $id = $this->input->post('id_herbalife');
-    $pass = $this->input->post('password');
-    $user = $this['users']->search($id, md5($pass));
-    if($user)
+    $username = $this->input->post('username');
+    $password = $this->input->post('password');
+    $admin = $this['admins']->search($username, md5($password));
+    if($admin)
     {
-      $userdata = array('id_herbalife' => $id, 'current_session' => md5(time()), 'is_admin' => 1);
+      $userdata = array('admin' => $username, 'current_session' => md5(time()));
       $this->session->set_userdata($userdata);
       redirect(base_url('admin'));
     }
@@ -43,7 +43,15 @@ class Admin extends HL_Controller
 
   function check_authorization()
   {
-    if(!($this->user_loged_in() && $this->session->userdata('is_admin') == 1))
+    if(!($this->admin_loged_in())
       redirect(base_url('admin/login'));
+  }
+  
+  function admin_loged_in()
+  {
+    if(!($this->session->userdata('admin') && $this->session->userdata('current_session')))
+      return false;
+    else
+      return true;
   }
 }

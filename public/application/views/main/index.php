@@ -50,34 +50,34 @@
               <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="<?php echo $user['nationality']; ?>" id="nationality" />
             </div>
             <div>
-              <label for="date_birth">Fecha de Nacimiento</label><input type="text" name="date_birth" value="" id="date_birth" />
+              <label for="date_birth">Fecha de Nacimiento</label><input type="text" name="birthdate" value="<?php echo $user['birthday']; ?>" id="birthdate" />
             </div>
             <div>
-              <label for="team_level">Nivel de Equipo</label><input type="text" name="team_level" value="" id="team_level" />
+              <label for="team_level">Nivel de Equipo</label><input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" />
             </div>
             <div>
-              <label for="residence_country">País de residencia</label><input type="text" name="residence_country" value="" id="residence_country" />
+              <label for="residence_country">País de residencia</label><input type="text" name="country" value="<?php echo $user['country']; ?>" id="country" />
             </div>
             <div>
-              <label for="passport">#Pasaporte</label><input type="text" name="passport" value="" id="passport" />
+              <label for="passport">#Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
             </div>
             <div>
-              <label for="passport_due_date">Vencimiento Pasaporte</label><input type="text" name="passport_due_date" value="" id="passport_due_date" />
+              <label for="passport_due_date">Vencimiento Pasaporte</label><input type="text" name="passport_due_date" value="<?php echo $user['passport_due_date']; ?>" id="passport_due_date" />
             </div>
             <div>
-              <label for="visa">Visa</label><input type="text" name="visa" value="" id="visa" />
+              <label for="visa">Visa</label><input type="text" name="visa" value="<?php echo $user['visa']; ?>" id="visa" />
             </div>
             <div>
-              <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="" id="visa_due_date" />
+              <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="<?php echo $user['visa_due_date']; ?>" id="visa_due_date" />
             </div>
             <div>
-              <label for="telephone">Teléfono Fijo</label><input type="text" name="telephone" value="" id="telephone" />
+              <label for="telephone">Teléfono Fijo</label><input type="text" name="telephone" value="<?php echo $user['telephone']; ?>" id="telephone" />
             </div>
             <div>
-              <label for="mobile_number">Teléfono móvil</label><input type="text" name="mobile_number" value="" id="mobile_number" />
+              <label for="mobile_number">Teléfono móvil</label><input type="text" name="mobile_number" value="<?php echo $user['mobile']; ?>" id="mobile_number" />
             </div>
             <div>
-              <label for="email">Correo electrónico</label><input type="text" name="email" value="" id="email" />
+              <label for="email">Correo electrónico</label><input type="text" name="email" value="<?php echo $user['email']; ?>" id="email" />
             </div>
             <div>
               <label></label>

@@ -5,9 +5,8 @@ $(document).ready(function() {
       url: _baseUrl+'admin/user',
       data: data,
       type: 'get',
-      dataType: 'json',
       success: function(response) {
-        console.log(response);
+        $('#main_content').html(response);
       }
     });
     return false;

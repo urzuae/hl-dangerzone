@@ -69,7 +69,7 @@ class HL_Controller extends CI_Controller implements ArrayAccess
   public function check_login()
   {
     if(!$this->user_loged_in())
-      redirect(base_url());
+      redirect(base_url('main/login'));
   }
 }
 

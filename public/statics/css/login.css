@@ -1,14 +1,10 @@
 html { font-family: Arial Rounded, sans-serif; }
 body { background: url(../images/backgrounds/bg-body.png) repeat-x #f9f5ba; }
 img { border: none; }
-img.admin_logo { height: 200px; }
+img { height: 300px; }
 #container { text-align: center; }
 header { width: 960px; margin: 10px auto; }
-section { width: 480px; margin: 0 auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
+section { width: 480px; margin: 0 auto; }
 p.login_message { color: #555; font-size: 16px; margin: 35px 10px; }
 #login div label { width: 150px; display: inline-block; }
 #login input { padding: 0px; }
