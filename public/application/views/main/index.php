@@ -64,13 +64,19 @@
               <label for="country">País de residencia</label><input type="text" name="country" value="<?php echo $user['country']; ?>" id="country" />
             </div>
             <div>
-              <label for="passport">#Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
+              <label for="passport">Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
+            </div>
+            <div>
+              <label for="passport_date">Expedición Pasaporte</label><input type="text" name="passport_date" value="<?php echo $user['passport_date']; ?>" id="passport_date" />
             </div>
             <div>
               <label for="passport_due_date">Vencimiento Pasaporte</label><input type="text" name="passport_due_date" value="<?php echo $user['passport_due_date']; ?>" id="passport_due_date" />
             </div>
             <div>
               <label for="visa">Visa</label><input type="text" name="visa" value="<?php echo $user['visa']; ?>" id="visa" />
+            </div>
+            <div>
+              <label for="visa_date">Expedición Visa</label><input type="text" name="visa_date" value="<?php echo $user['visa_date']; ?>" id="visa_date" />
             </div>
             <div>
               <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="<?php echo $user['visa_due_date']; ?>" id="visa_due_date" />

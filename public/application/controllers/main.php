@@ -4,7 +4,9 @@ class Main extends HL_Controller
   public function index()
   {
     $this->check_login();
-    $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife'));
+    $user = $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife'));
+    if(2 == $user['status'])
+      redirect(base_url('main/confirmacion'));
     $this->view = 'main/index';
   }
   
