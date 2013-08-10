@@ -89,6 +89,12 @@ class Main extends HL_Controller
     $this->template_file = 'template/general';
     $this->view = 'main/confirmacion';
   }
+  
+  public function terminos()
+  {
+    $this->template_file = 'template/general';
+    $this->view = 'main/terminos';
+  }
 
   public function login()
   {

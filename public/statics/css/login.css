@@ -8,6 +8,7 @@ section { width: 480px; margin: 0 auto; }
 p.login_message { color: #555; font-size: 16px; margin: 35px 10px; }
 #login div label { width: 150px; display: inline-block; }
 #login input { padding: 0px; }
+#login input[type="submit"].disabled { background: url(../images/botones/bg-submit-disabled.png) no-repeat; border: none; color: #999; }
 #login input[type="text"], #login input[type="password"] { 
   background: url(../images/botones/bg-input.png) repeat-x; height: 52px; border: none;
     width: 320px; border: 1px solid #eeeeee; 
@@ -20,10 +21,15 @@ p.login_message { color: #555; font-size: 16px; margin: 35px 10px; }
   margin-bottom: 20px;
 }
 #login input[type="submit"] { 
+  margin-top: 15px;
   color: #fff;
   font-size: 17px;
   background: url(../images/botones/bg-submit.png) repeat-x; 
   border: 1px #71A501 solid; height: 46px; width: 160px; -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; 
+  cursor: pointer;
+}
+#login div {
+  color: #555;
 }
