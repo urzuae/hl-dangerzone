@@ -4,7 +4,7 @@ class Main extends HL_Controller
   public function index()
   {
     $this->check_login();
-    $user = $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife'));
+    $user = $this->view_data['user'] = $this['users']->select($this->session->userdata('id'));
     if(2 == $user['status'])
       redirect(base_url('main/confirmacion'));
     $this->view = 'main/index';
@@ -13,15 +13,15 @@ class Main extends HL_Controller
   public function formulario()
   {
     $this->check_login();
-    $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife')); 
+    $this->view_data['user'] = $this['users']->select($this->session->userdata('id')); 
     $this->view = 'main/formulario';
   }
   
   public function save()
   {
     $this->check_login();
-    $id = $this->input->post('id_herbalife');
-    $user = $this['users']->select_by_id($id);
+    $id = $this->input->post('id');
+    $user = $this['users']->select($id);
     $name = $this->input->post('name');
     $appa = $this->input->post('paternal_last_name');
     $apma = $this->input->post('maternal_last_name');
@@ -50,10 +50,19 @@ class Main extends HL_Controller
   public function companion($order)
   {
     $this->check_login();
-    $this->view_data['user'] = $this['users']->select_by_id($this->session->userdata('id_herbalife'));
+    $user = $this->view_data['user'] = $this['users']->select($this->session->userdata('id'));
+    $companion = $this['companions']->getByOrder($user['id'], $order);
     $this->view_data['no_companion'] = $order;
     $this->template_file = 'template/general';
-    $this->view = 'main/companion';
+    if($companion)
+    {
+      $this->view_data['companion'] = $companion;
+      $this->view = 'main/companion';
+    }
+    else 
+    {
+      $this->view = 'main/companion_new';
+    }
   }
   
   public function save_companion()
@@ -107,11 +116,11 @@ class Main extends HL_Controller
   
   public function sign_in()
   {
-    $id = $this->input->post('id_herbalife');
-    $user = $this['users']->select_by_id($id);
+    $id = $this->input->post('id');
+    $user = $this['users']->select($id);
     if($user)
     {
-      $userdata = array('id_herbalife' => $id, 'current_session' => md5(time()));
+      $userdata = array('id' => $id, 'current_session' => md5(time()));
       $this->session->set_userdata($userdata);
       redirect(base_url());
     }
@@ -124,7 +133,7 @@ class Main extends HL_Controller
   
   public function sign_out()
   {
-    $user_data = array('id_herbalife' => '', 'current_session' => '', 'password' => '');
+    $user_data = array('id' => '', 'current_session' => '', 'password' => '');
     $this->session->unset_userdata($user_data);
     redirect(base_url('main/login'));
   }

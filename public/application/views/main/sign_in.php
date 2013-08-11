@@ -20,7 +20,7 @@
         </div>
         <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
-            <input type="text" name="id_herbalife" value="" id="id_herbalife" placeholder="ID HERBALIFE" />
+            <input type="text" name="id" value="" id="id" placeholder="ID HERBALIFE" />
           </div>
           <div>
             <input type="submit" value="Entrar">

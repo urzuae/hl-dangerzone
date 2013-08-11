@@ -60,7 +60,7 @@ class HL_Controller extends CI_Controller implements ArrayAccess
   
   public function user_loged_in()
   {
-    if(!($this->session->userdata('id_herbalife') && $this->session->userdata('current_session')))
+    if(!($this->session->userdata('id') && $this->session->userdata('current_session')))
       return false;
     else
       return true;

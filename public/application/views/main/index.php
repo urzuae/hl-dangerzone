@@ -37,7 +37,7 @@
           <h2>REGÍSTRATE</h2>
           <form action="<?php echo base_url('main/save'); ?>" method="post" id="contact_info">
             <div>
-              <label for="id_herbalife">ID HERBALIFE</label><input type="text" name="id_herbalife" value="<?php echo $user['id_herbalife']; ?>" id="id_herbalife" disabled="disabled" />
+              <label for="id">ID HERBALIFE</label><input type="text" name="id" value="<?php echo $user['id']; ?>" id="id" disabled="disabled" />
             </div>
             <div>
               <label for="name">Nombre(s)</label><input type="text" name="name" value="<?php echo $user['name']; ?>" id="name" />

@@ -7,4 +7,11 @@ class CompanionsModel extends HL_Model
     $this->table = 'Companions';
   }
   
+  public function getByOrder($user_id, $orden)
+  {
+    $query = $this->db->get_where($this->table, array('user_id' => $user_id, 'no_companion' => $orden));
+    $result = $query->result_array();
+    return $result[0];
+  }
+
 }
