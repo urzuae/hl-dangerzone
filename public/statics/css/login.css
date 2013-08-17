@@ -2,6 +2,7 @@ html { font-family: Arial Rounded, sans-serif; }
 body { background: url(../images/backgrounds/bg-body.png) repeat-x #f9f5ba; }
 img { border: none; }
 img { height: 300px; }
+img.logo { height: 135px; }
 #container { text-align: center; }
 header { width: 960px; margin: 10px auto; }
 section { width: 480px; margin: 0 auto; }
