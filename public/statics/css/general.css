@@ -18,6 +18,7 @@ h2 { color: #c8c8c8; font-size: 15px; margin: 25px 0;}
 #nav li a.exit { background: url(../images/botones/exit.png) no-repeat; }
 #main_content { margin-left: 203px; border-top: 3px solid #bfbfbf; background: #fff; padding-bottom: 20px; }
 #contact_info div { margin: 20px; }
-#contact_info label { display: inline-block; width: 232px; text-align: right; margin-right: 10px; color: #c3c3c3; }
-#contact_info input[type="text"] { background: url(../images/botones/bg-form-input.png) no-repeat; border: none; width: 232px; height: 23px; color: #acacac; }
+#contact_info label { display: inline-block; width: 232px; text-align: right; margin-right: 10px; color: #444; }
+#contact_info input[type="text"] { background: url(../images/botones/bg-form-input.png) no-repeat; border: none; width: 232px; height: 23px; color: #444; }
 #contact_info input[type="submit"] { background: url(../images/botones/bg-form-submit.png) no-repeat; border: none; width: 164px; height: 38px; color: #fff; font-size: 14px; }
+#contact_info input.disabled { color: #c3c3c3;  }

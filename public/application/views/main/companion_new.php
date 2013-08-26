@@ -3,17 +3,25 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="<?php echo base_url('statics/css/general.css'); ?>" type="text/css" />
+    <link rel="stylesheet" href="<?php echo base_url('statics/css/datepicker.css'); ?>" type="text/css" />
     <script type="text/javascript" src="<?php echo base_url('statics/js/jquery.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('statics/js/jquery.ui.js'); ?>"></script>
+     <script type="text/javascript" src="<?php echo base_url('statics/js/datepicker.js'); ?>"></script>
     <!--<script type="text/javascript" src="http://localhost/validamesta/src/validamesta.js"></script>-->
     <script type="text/javascript">
-      /*$(document).ready(function() {
-        //$('#contact_info').validamesta();
+      $(document).ready(function() {
+        /*$('#contact_info').validamesta();
         $('#contact_info').validamesta();
         $('#contact_info').submit(function() { 
           $(this).data('validamesta').validate();
           return false;
+        });*/
+        $('.date_input').datepicker({
+          changeMonth: true,
+          changeYear: true,
+          dateFormat: 'yy-mm-dd'
         });
-      });*/
+      });
     </script>
   </head>
   <body>
@@ -57,13 +65,14 @@
               <label for="passport">#Pasaporte</label><input type="text" name="passport" value="" id="passport" />
             </div>
             <div>
-              <label for="passport_due_date">Vencimiento Pasaporte</label><input type="text" name="passport_due_date" value="" id="passport_due_date" />
+              <label for="passport_due_date">Vencimiento Pasaporte</label>
+              <input type="text" name="passport_due_date" value="" id="passport_due_date" class="date_input" />
             </div>
             <div>
               <label for="visa">Visa</label><input type="text" name="visa" value="" id="visa" />
             </div>
             <div>
-              <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="" id="visa_due_date" />
+              <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="" id="visa_due_date" class="date_input" />
             </div>
             <div>
               <label></label>

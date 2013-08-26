@@ -20,4 +20,12 @@ $(document).ready(function() {
     else
       return false;
   });
+  
+  $('#visa_terms').hover(
+    function(event) {
+      $('#visa_message').show().css({top: event.pageY, left: event.pageX});
+    },
+    function(event) {
+      $('#visa_message').hide();
+  });
 });

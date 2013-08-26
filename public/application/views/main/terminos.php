@@ -7,7 +7,7 @@
   </head>
   <body>
     <header>
-      <a href="http://herbalife.hen/">
+      <a href="<?php echo base_url(); ?>">
         <img src="http://herbalife.hen/statics/images/misc/herbalife.png" alt="herbalife" class="herbalife" />
         <img src="http://herbalife.hen/statics/images/misc/logoHerbalife.png" alt="herbalife" class="logo"/></a>
     </header>

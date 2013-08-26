@@ -12,12 +12,10 @@
         </a>
       </header>
       <section>
-        <p class="login_message">
-          
-        </p>
         <div class="error_message">
-          El ID de Herbalife que ha ingresado no se encuentra, inténtelo de nuevo.
+          Por favor contacte a su Distribuidor Herbalife&reg;
         </div>
+        <br/>
         <form action="<?php echo base_url('main/sign_in'); ?>" method="post" id="login">
           <div>
             <input type="text" name="id" value="" id="id" placeholder="ID HERBALIFE" />

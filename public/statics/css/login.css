@@ -34,3 +34,17 @@ p.login_message { color: #555; font-size: 16px; margin: 35px 10px; }
 #login div {
   color: #555;
 }
+#visa_terms {
+  cursor: pointer;
+  text-decoration: underline;
+}
+#visa_message {
+  display: none;
+  position: absolute;
+  width: 500px;
+  background: #fff;
+  font-size: 10px;
+}
+#visa_message ul li ul li {
+  display: inline;
+}

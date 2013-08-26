@@ -31,8 +31,10 @@ class Main extends HL_Controller
     $team = $this->input->post('team_level');
     $country = $this->input->post('country');
     $passport = $this->input->post('passport');
+    $passport_date = $this->input->post('passport_date');
     $pass_due_date = $this->input->post('passport_due_date');
     $visa = $this->input->post('visa');
+    $visa_date = $this->input->post('visa_date');
     $visa_due_date = $this->input->post('visa_due_date');
     $telephone = $this->input->post('telephone');
     $mobile = $this->input->post('mobile');
@@ -40,7 +42,8 @@ class Main extends HL_Controller
     
     $params = array('name' => $name, 'paternal_last_name' => $appa, 'maternal_last_name' => $apma, 'gender' => $gender,
       'nationality' => $nationality, 'birthday' => $birthday, 'team_level' => $team, 'country' => $country,
-      'passport' => $passport, 'passport_due_date' => $pass_due_date, 'visa' => $visa, 'visa_due_date' => $visa_due_date,
+      'passport' => $passport, 'passport_date' => $passport_date, 'passport_due_date' => $pass_due_date, 'visa' => $visa, 
+      'visa_date' => $visa_date, 'visa_due_date' => $visa_due_date,
       'telephone' => $telephone, 'mobile' => $mobile, 'email' => $email, 'status' => 2);
     
     $this['users']->update($user['id'], $params);
@@ -57,7 +60,7 @@ class Main extends HL_Controller
     if($companion)
     {
       $this->view_data['companion'] = $companion;
-      $this->view = 'main/companion';
+      $this->view = 'main/companion_new';
     }
     else 
     {
@@ -75,15 +78,24 @@ class Main extends HL_Controller
     $nationality = $this->input->post('nationality');
     $relative = $this->input->post('relative');
     $passport = $this->input->post('passport');
-    $pass_due_date = $this->input->post('pass_due_date');
+    $passport_date = $this->input->post('passport_date');
+    $pass_due_date = $this->input->post('passport_due_date');
     $visa = $this->input->post('visa');
+    $visa_date = $this->input->post('visa_date');
     $visa_due_date = $this->input->post('visa_due_date');
     $no_companion = $this->input->post('no_companion');
 
     $params = array('user_id' => $user_id, 'name' => $name, 'paternal_last_name' => $appa, 'maternal_last_name' => $apma, 
-      'nationality' => $nationality, 'relative' => $relative, 'passport' => $passport, 'passport_due_date' => $pass_due_date,
-      'visa' => $visa, 'visa_due_date' => $visa_due_date, 'no_companion' => $no_companion );
-    $this['companions']->insert($params);
+      'nationality' => $nationality, 'relative' => $relative, 'passport' => $passport, 'passport_date' => $passport_date,
+      'passport_due_date' => $pass_due_date, 'visa' => $visa, 'visa_date' => $visa_date,
+      'visa_due_date' => $visa_due_date, 'no_companion' => $no_companion );
+    if($this->input->post('companion_id'))
+    {
+      $companion_id = $this->input->post('companion_id');
+      $this['companions']->update($companion_id, $params);
+    }
+    else 
+      $this['companions']->insert($params);
     
     if($no_companion == 3)
     {

@@ -8,3 +8,4 @@ h1, h2 { color: #125cb5; text-align: center; margin: 30px; }
 h1 { font-size: 20px; }
 ol li { margin: 10px; font-size: 14px; }
 ol li span { color: #404a51; font-weight: bold; }
+section > p { margin: 20px; }

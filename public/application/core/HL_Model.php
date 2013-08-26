@@ -12,6 +12,7 @@ class HL_Model extends CI_Model
   {
     $query = $this->db->get_where($this->table, array('id' => $id));
     $row = $query->result_array();
+    if(!$row) return false;
     return $row[0];
   }
 
