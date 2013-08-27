@@ -69,7 +69,12 @@
               <label for="gender">Género</label><input type="text" name="gender" value="<?php echo $user['gender']; ?>" id="gender" />
             </div>
             <div>
-              <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="<?php echo $user['nationality']; ?>" id="nationality" />
+              <label for="nationality">Nacionalidad</label>
+              <select name="nationality" id="nationality">
+                <?php foreach($countries as $country) {?>
+                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['nationality']; ?></option>
+                <?php } ?>
+              </select>
             </div>
             <div>
               <label for="birthday">Fecha de Nacimiento</label>
@@ -80,7 +85,12 @@
               <input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" disabled="disabled" class="disabled" />
             </div>
             <div>
-              <label for="country">País de residencia</label><input type="text" name="country" value="<?php echo $user['country']; ?>" id="country" />
+              <label for="country">País de residencia</label>
+              <select name="country" id="country">
+                <?php foreach($countries as $country) {?>
+                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['country'] ? 'selected="selected"' : ''; ?>><?php echo $country['name']; ?></option>
+                <?php } ?>
+              </select>
             </div>
             <div>
               <label for="passport">Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />

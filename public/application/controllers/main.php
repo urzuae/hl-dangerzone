@@ -7,6 +7,7 @@ class Main extends HL_Controller
     $user = $this->view_data['user'] = $this['users']->select($this->session->userdata('id'));
     if(2 == $user['status'])
       redirect(base_url('main/confirmacion'));
+    $this->view_data['countries'] = $this['countries']->getAll();
     $this->view = 'main/index';
   }
   
