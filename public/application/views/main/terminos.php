@@ -12,6 +12,7 @@
         <img src="http://herbalife.hen/statics/images/misc/logoHerbalife.png" alt="herbalife" class="logo"/></a>
     </header>
     <section> 
+      <a href="<?php echo base_url(); ?>">Regresar</a>
       <h1>TÉRMINOS Y CONDICIONES</h1>
       <ol>
         <li>Esta es solo una cotización la cual <span>no garantiza ningún servicio</span>, aplica únicamente para las <span>Vacaciones LATinolvidables 2013</span> a realizarse en Cancún, Quintana Roo del 19 al 24 de Noviembre de 2013.</li>

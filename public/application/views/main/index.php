@@ -66,7 +66,8 @@
               <input type="text" name="maternal_last_name" value="<?php echo $user['maternal_last_name']; ?>" id="maternal_last_name" disabled="disabled" class="disabled" />
             </div>
             <div>
-              <label for="gender">Género</label><input type="text" name="gender" value="<?php echo $user['gender']; ?>" id="gender" />
+              <label for="gender">Género</label>
+              <input type="radio" name="gender" value="1" /> Masculino <input type="radio"name="gender" value="2" /> Femenino
             </div>
             <div>
               <label for="nationality">Nacionalidad</label>

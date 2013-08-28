@@ -61,7 +61,7 @@ class Main extends HL_Controller
     if($companion)
     {
       $this->view_data['companion'] = $companion;
-      $this->view = 'main/companion_new';
+      $this->view = 'main/companion';
     }
     else 
     {
