@@ -26,6 +26,14 @@
           var fecha = $(this).val();
           $(this).datepicker('setDate', fecha);
         });
+        $('#nationality').change(function() {
+          if($(this).val() == 0) {
+            $('#other_nat').removeClass('oculto');
+          }
+          else {
+            $('#other_nat').addClass('oculto');
+          }
+        });
       });
     </script>
   </head>
@@ -51,23 +59,24 @@
           <form action="<?php echo base_url('main/save'); ?>" method="post" id="contact_info">
             <div>
               <label for="id">ID HERBALIFE</label>
-              <input type="text" name="id" value="<?php echo $user['id']; ?>" id="id" disabled="disabled" class="disabled" />
+              <input type="text" name="id" value="<?php echo $user['id']; ?>" id="id" readonly class="disabled" />
             </div>
             <div>
               <label for="name">Nombre(s)</label>
-              <input type="text" name="name" value="<?php echo $user['name']; ?>" id="name" disabled="disabled" class="disabled" />
+              <input type="text" name="name" value="<?php echo $user['name']; ?>" id="name" />
             </div>
             <div>
               <label for="paternal_last_name">Apellido Paterno</label>
-              <input type="text" name="paternal_last_name" value="<?php echo $user['paternal_last_name']; ?>" id="paternal_last_name" disabled="disabled" class="disabled" />
+              <input type="text" name="paternal_last_name" value="<?php echo $user['paternal_last_name']; ?>" id="paternal_last_name" />
             </div>
             <div>
               <label for="maternal_last_name">Apellido Materno</label>
-              <input type="text" name="maternal_last_name" value="<?php echo $user['maternal_last_name']; ?>" id="maternal_last_name" disabled="disabled" class="disabled" />
+              <input type="text" name="maternal_last_name" value="<?php echo $user['maternal_last_name']; ?>" id="maternal_last_name" />
             </div>
             <div>
               <label for="gender">Género</label>
-              <input type="radio" name="gender" value="1" /> Masculino <input type="radio"name="gender" value="2" /> Femenino
+              <input type="radio" name="gender" value="1" <?php echo $user['gender'] == 1 ? 'checked="checked"' : ''; ?> /> Masculino
+              <input type="radio" name="gender" value="2" <?php echo $user['gender'] == 2 ? 'checked="checked"' : ''; ?> /> Femenino
             </div>
             <div>
               <label for="nationality">Nacionalidad</label>
@@ -75,7 +84,12 @@
                 <?php foreach($countries as $country) {?>
                   <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['nationality']; ?></option>
                 <?php } ?>
+                <option value="0">Otro</option>
               </select>
+            </div>
+            <div <?php echo $user['nationality'] == 0 ? '' : 'class="oculto"'; ?> id="other_nat">
+              <label for="other_nationality">Otra Nacionalidad:</label>
+              <input type="text" name="other_nationality" id="other_nationality" value="<?php echo $user['other_nationality']; ?>" />
             </div>
             <div>
               <label for="birthday">Fecha de Nacimiento</label>
@@ -83,7 +97,7 @@
             </div>
             <div>
               <label for="team_level">Equipo</label>
-              <input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" disabled="disabled" class="disabled" />
+              <input type="text" name="team_level" value="<?php echo $user['team_level']; ?>" id="team_level" />
             </div>
             <div>
               <label for="country">País de residencia</label>

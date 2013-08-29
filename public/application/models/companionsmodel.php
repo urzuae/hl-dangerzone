@@ -11,6 +11,7 @@ class CompanionsModel extends HL_Model
   {
     $query = $this->db->get_where($this->table, array('user_id' => $user_id, 'no_companion' => $orden));
     $result = $query->result_array();
+    if(!$result) return false;
     return $result[0];
   }
 

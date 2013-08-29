@@ -21,6 +21,17 @@
           changeYear: true,
           dateFormat: 'yy-mm-dd'
         });
+        $('#contact_info').submit(function() {
+          return confirm('¿Desea continuar con el registro?. Recuerde que ya no podrá modificar sus datos');
+        });
+        $('#nationality').change(function() {
+          if($(this).val() == 0) {
+            $('#other_nat').removeClass('oculto');
+          }
+          else {
+            $('#other_nat').addClass('oculto');
+          }
+        });
       });
     </script>
   </head>
@@ -38,7 +49,7 @@
             <li <?php echo $no_companion == 1 ? 'class="active"' : false; ?>><a href="#" class="first">Acompañante</a></li>
             <li <?php echo $no_companion == 2 ? 'class="active"' : false; ?>><a href="#" class="second">Adicional 1</a></li>
             <li <?php echo $no_companion == 3 ? 'class="active"' : false; ?>><a href="#" class="third">Adicional 2</a></li>
-            <li><a href="<?php echo base_url('main/sign_out'); ?>" class="exit">Salir</a>
+            <li><a href="<?php echo base_url('main/sign_out'); ?>" class="exit">Salir</a></li>
           </ul>
         </div>
         <section id="main_content">
@@ -58,7 +69,17 @@
               <label for="maternal_last_name">Apellido Materno</label><input type="text" name="maternal_last_name" value="<?php echo $companion['maternal_last_name']; ?>" id="maternal_last_name" />
             </div>
             <div>
-              <label for="nationality">Nacionalidad</label><input type="text" name="nationality" value="<?php echo $companion['nationality']; ?>" id="nationality" />
+              <label for="nationality">Nacionalidad</label>
+              <select name="nationality" id="nationality">
+                <?php foreach($countries as $country) {?>
+                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $companion['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['nationality']; ?></option>
+                <?php } ?>
+                <option value="0">Otro</option>
+              </select>
+            </div>
+            <div <?php echo $companion['nationality'] == 0 ? '' : 'class="oculto"'; ?> id="other_nat">
+              <label for="other_nationality">Otra Nacionalidad:</label>
+              <input type="text" name="other_nationality" id="other_nationality" value="<?php echo $companion['other_nationality']; ?>" />
             </div>
             <div>
               <label for="relative">Parentesco</label><input type="text" name="relative" value="<?php echo $companion['relative']; ?>" id="relative" />
@@ -85,9 +106,9 @@
               <label for="visa_due_date">Vencimiento Visa</label>
               <input type="text" name="visa_due_date" class="date_input" value="<?php echo $companion['visa_due_date']; ?>" id="visa_due_date" />
             </div>
-            <div>
-              <label></label>
-              <input type="submit" value="Continuar" name="submit" />
+            <div style="padding-left: 100px;">
+              <input type="submit" value="Continuar y Finalizar Registro" name="finish" />
+              <input type="submit" value="Continuar y Añadir Acompañante" name="continue" />
             </div>
           </form>
         </section>

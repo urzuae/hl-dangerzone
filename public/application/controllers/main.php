@@ -28,6 +28,7 @@ class Main extends HL_Controller
     $apma = $this->input->post('maternal_last_name');
     $gender = $this->input->post('gender');
     $nationality = $this->input->post('nationality');
+    $other_nat = $this->input->post('other_nationality');
     $birthday = $this->input->post('birthday');
     $team = $this->input->post('team_level');
     $country = $this->input->post('country');
@@ -42,11 +43,10 @@ class Main extends HL_Controller
     $email = $this->input->post('email');
     
     $params = array('name' => $name, 'paternal_last_name' => $appa, 'maternal_last_name' => $apma, 'gender' => $gender,
-      'nationality' => $nationality, 'birthday' => $birthday, 'team_level' => $team, 'country' => $country,
+      'nationality' => $nationality, 'other_nationality' => $other_nat, 'birthday' => $birthday, 'team_level' => $team, 'country' => $country,
       'passport' => $passport, 'passport_date' => $passport_date, 'passport_due_date' => $pass_due_date, 'visa' => $visa, 
       'visa_date' => $visa_date, 'visa_due_date' => $visa_due_date,
-      'telephone' => $telephone, 'mobile' => $mobile, 'email' => $email, 'status' => 2);
-    
+      'telephone' => $telephone, 'mobile' => $mobile, 'email' => $email, 'status' => 0);
     $this['users']->update($user['id'], $params);
     redirect(base_url('main/companion/1'));
   }
@@ -55,6 +55,7 @@ class Main extends HL_Controller
   {
     $this->check_login();
     $user = $this->view_data['user'] = $this['users']->select($this->session->userdata('id'));
+    $this->view_data['countries'] = $this['countries']->getAll();
     $companion = $this['companions']->getByOrder($user['id'], $order);
     $this->view_data['no_companion'] = $order;
     $this->template_file = 'template/general';
@@ -98,9 +99,8 @@ class Main extends HL_Controller
     else 
       $this['companions']->insert($params);
     
-    if($no_companion == 3)
+    if($no_companion == 3 || $this->input->post('finish'))
     {
-      $this['users']->update($user_id, array('status' => 3) );
       redirect(base_url('main/confirmacion'));
     }
     else

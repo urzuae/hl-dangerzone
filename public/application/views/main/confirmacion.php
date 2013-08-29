@@ -23,6 +23,9 @@
           <img src="<?php echo base_url('statics/images/misc/logoHerbalife.png'); ?>" alt="herbalife" class="logo"/></a>
       </header>
       ¡FELICIDADES! Tu registro se ha realizado con éxito
+      <p>
+        <a href="<?php echo base_url('main/sign_out'); ?>" class="exit">Salir</a>
+      </p>
     </div>
   </body>
 </html>
