@@ -70,7 +70,7 @@
               <label for="nationality">Nacionalidad</label>
               <select name="nationality" id="nationality">
                 <?php foreach($countries as $country) {?>
-                  <option value="<?php echo $country['id']; ?>"><?php echo $country['nationality']; ?></option>
+                  <option value="<?php echo $country['id']; ?>"><?php echo $country['name']; ?></option>
                 <?php } ?>
                 <option value="0">Otro</option>
               </select>
@@ -83,17 +83,25 @@
               <label for="relative">Parentesco</label><input type="text" name="relative" value="" id="relative" />
             </div>
             <div>
-              <label for="passport">#Pasaporte</label><input type="text" name="passport" value="" id="passport" />
+              <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="" id="passport" />
             </div>
             <div>
-              <label for="passport_due_date">Vencimiento Pasaporte</label>
+              <label for="passport_date">Fecha de Expedición Pasaporte</label>
+              <input type="text" name="passport_date" id="passport_date" class="date_input" value="" />
+            </div>
+            <div>
+              <label for="passport_due_date">Fecha de Vencimiento Pasaporte</label>
               <input type="text" name="passport_due_date" value="" id="passport_due_date" class="date_input" />
             </div>
             <div>
-              <label for="visa">Visa</label><input type="text" name="visa" value="" id="visa" />
+              <label for="visa">No. de Visa</label><input type="text" name="visa" value="" id="visa" />
             </div>
             <div>
-              <label for="visa_due_date">Vencimiento Visa</label><input type="text" name="visa_due_date" value="" id="visa_due_date" class="date_input" />
+              <label for="visa_date">Fecha de Expedición Visa</label>
+              <input type="text" name="visa_date" id="visa_date" class="date_input" value="" />
+            </div>
+            <div>
+              <label for="visa_due_date">Fecha de Vencimiento Visa</label><input type="text" name="visa_due_date" value="" id="visa_due_date" class="date_input" />
             </div>
             <div style="padding-left: 100px;">
               <input type="submit" value="Continuar y Finalizar Registro" name="finish" />

@@ -72,7 +72,7 @@
               <label for="nationality">Nacionalidad</label>
               <select name="nationality" id="nationality">
                 <?php foreach($countries as $country) {?>
-                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $companion['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['nationality']; ?></option>
+                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $companion['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['name']; ?></option>
                 <?php } ?>
                 <option value="0">Otro</option>
               </select>
@@ -85,25 +85,25 @@
               <label for="relative">Parentesco</label><input type="text" name="relative" value="<?php echo $companion['relative']; ?>" id="relative" />
             </div>
             <div>
-              <label for="passport">#Pasaporte</label><input type="text" name="passport" value="<?php echo $companion['passport']; ?>" id="passport" />
+              <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="<?php echo $companion['passport']; ?>" id="passport" />
             </div>
             <div>
-              <label for="passport_date">Expedición Pasaporte</label>
+              <label for="passport_date">Fecha de Expedición Pasaporte</label>
               <input type="text" name="passport_date" id="passport_date" class="date_input" value="<?php echo $companion['passport_date']; ?>" />
             </div>
             <div>
-              <label for="passport_due_date">Vencimiento Pasaporte</label>
+              <label for="passport_due_date">Fecha de Vencimiento Pasaporte</label>
               <input type="text" name="passport_due_date" class="date_input" value="<?php echo $companion['passport_due_date']; ?>" id="passport_due_date" />
             </div>
             <div>
-              <label for="visa">Visa</label><input type="text" name="visa" value="<?php echo $companion['visa']; ?>" id="visa" />
+              <label for="visa">No. de Visa</label><input type="text" name="visa" value="<?php echo $companion['visa']; ?>" id="visa" />
             </div>
             <div>
-              <label for="visa_date">Expedición Visa</label>
+              <label for="visa_date">Fecha de Expedición Visa</label>
               <input type="text" name="visa_date" id="visa_date" class="date_input" value="<?php echo $companion['visa_date']; ?>" />
             </div>
             <div>
-              <label for="visa_due_date">Vencimiento Visa</label>
+              <label for="visa_due_date">Fecha de Vencimiento Visa</label>
               <input type="text" name="visa_due_date" class="date_input" value="<?php echo $companion['visa_due_date']; ?>" id="visa_due_date" />
             </div>
             <div style="padding-left: 100px;">

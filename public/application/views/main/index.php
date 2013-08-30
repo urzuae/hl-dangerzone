@@ -34,6 +34,10 @@
             $('#other_nat').addClass('oculto');
           }
         });
+        $('#country').change(function() {
+         if($(this).val() == 0) $('#other_county').removeClass('oculto');
+         else $('#other_county').addClass('oculto');
+        });
       });
     </script>
   </head>
@@ -82,9 +86,9 @@
               <label for="nationality">Nacionalidad</label>
               <select name="nationality" id="nationality">
                 <?php foreach($countries as $country) {?>
-                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['nationality']; ?></option>
+                  <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['nationality'] ? 'selected="selected"' : ''; ?>><?php echo $country['name']; ?></option>
                 <?php } ?>
-                <option value="0">Otro</option>
+                <option value="0" <?php echo 0 == $user['nationality'] ? 'selected="selected"' : ''; ?>>Otro</option>
               </select>
             </div>
             <div <?php echo $user['nationality'] == 0 ? '' : 'class="oculto"'; ?> id="other_nat">
@@ -105,38 +109,58 @@
                 <?php foreach($countries as $country) {?>
                   <option value="<?php echo $country['id']; ?>" <?php echo $country['id'] == $user['country'] ? 'selected="selected"' : ''; ?>><?php echo $country['name']; ?></option>
                 <?php } ?>
+                <option value="0" <?php echo 0 == $user['country'] ? 'selected="selected"' : ''; ?>>Otro</option>
               </select>
             </div>
-            <div>
-              <label for="passport">Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
+            <div <?php echo $user['country'] == 0 ? '' : 'class="oculto"'; ?> id="other_county">
+              <label for="other_country">Otro País de Residencia:</label>
+              <input type="text" name="other_country" id="other_country" value="<?php echo $user['other_country']; ?>" />
             </div>
             <div>
-              <label for="passport_date">Expedición Pasaporte</label>
+              <label for="city">Ciudad de Residencia</label>
+            </div>
+            <div>
+              <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
+            </div>
+            <div>
+              <label for="passport_date">Fecha de Expedición Pasaporte</label>
               <input type="text" name="passport_date" value="<?php echo $user['passport_date']; ?>" id="passport_date" class="date_input" />
             </div>
             <div>
-              <label for="passport_due_date">Vencimiento Pasaporte</label>
+              <label for="passport_due_date">Fecha de Vencimiento Pasaporte</label>
               <input type="text" name="passport_due_date" value="<?php echo $user['passport_due_date']; ?>" id="passport_due_date" class="date_input" />
             </div>
             <div>
-              <label for="visa">Visa</label><input type="text" name="visa" value="<?php echo $user['visa']; ?>" id="visa" />
+              <label for="visa">No. de Visa</label><input type="text" name="visa" value="<?php echo $user['visa']; ?>" id="visa" />
             </div>
             <div>
-              <label for="visa_date">Expedición Visa</label>
+              <label for="visa_date">Fecha de Expedición Visa</label>
               <input type="text" name="visa_date" value="<?php echo $user['visa_date']; ?>" id="visa_date" class="date_input" />
             </div>
             <div>
-              <label for="visa_due_date">Vencimiento Visa</label>
+              <label for="visa_due_date">Fecha de Vencimiento Visa</label>
               <input type="text" name="visa_due_date" value="<?php echo $user['visa_due_date']; ?>" id="visa_due_date" class="date_input" />
             </div>
             <div>
               <label for="telephone">Teléfono Fijo</label><input type="text" name="telephone" value="<?php echo $user['telephone']; ?>" id="telephone" />
             </div>
             <div>
+              <label for="telephone2">Teléfono Fijo 2</label>
+              <input type="text" name="telephone2" value="<?php echo $user['telephone']; ?>" id="telephone2" />
+            </div>
+            <div>
               <label for="mobile_number">Teléfono móvil</label><input type="text" name="mobile_number" value="<?php echo $user['mobile']; ?>" id="mobile_number" />
             </div>
             <div>
+              <label for="mobile_number2">Teléfono móvil 2</label>
+              <input type="text" name="mobile_number2" value="<?php echo  $user['mobile'];  ?>" id="mobule_number2" />
+            </div>
+            <div>
               <label for="email">Correo electrónico</label><input type="text" name="email" value="<?php echo $user['email']; ?>" id="email" />
+            </div>
+            <div>
+              <label for="email2">Correo electrónico 2</label>
+              <input type="text" name="email2" value="<?php echo $user['email']; ?>" id="email2" />
             </div>
             <div>
               <label></label>
