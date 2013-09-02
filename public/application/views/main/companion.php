@@ -32,6 +32,9 @@
             $('#other_nat').addClass('oculto');
           }
         });
+        $('#relative').change(function() {
+          $(this).val() == "" ? $('#other_relative').removeClass('oculto').val('') : $('#other_relative').addClass('oculto').val($(this).val());
+        });
       });
     </script>
   </head>
@@ -82,7 +85,19 @@
               <input type="text" name="other_nationality" id="other_nationality" value="<?php echo $companion['other_nationality']; ?>" />
             </div>
             <div>
-              <label for="relative">Parentesco</label><input type="text" name="relative" value="<?php echo $companion['relative']; ?>" id="relative" />
+              <label for="relative">Parentesco</label>
+              <select id="relative">
+                <option <?php if('Cónyuge' == $companion['relative']) echo "selected='selected'"; ?> >Cónyuge</option>
+                <option <?php if('Hijo(a)' == $companion['relative']) echo "selected='selected'"; ?>>Hijo(a)</option>
+                <option <?php if('Padre' == $companion['relative']) echo "selected='selected'"; ?>>Padre</option>
+                <option <?php if('Madre' == $companion['relative']) echo "selected='selected'"; ?>>Madre</option>
+                <option <?php if('Tío(a)' == $companion['relative']) echo "selected='selected'"; ?>>Tío(a)</option>
+                <option <?php if('Abuelo(a)' == $companion['relative']) echo "selected='selected'"; ?>>Abuelo(a)</option>
+                <option <?php if('Hermano(a)' == $companion['relative']) echo "selected='selected'"; ?>>Hermano(a)</option>
+                <option <?php if('Amigo(a)' == $companion['relative']) echo "selected='selected'"; ?>>Amigo(a)</option>
+                <option value="">Otro</option>
+              </select>
+              <input type="text" name="relative" id="other_relative" value="<?php echo $companion['relative']; ?>" class="oculto" />
             </div>
             <div>
               <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="<?php echo $companion['passport']; ?>" id="passport" />
@@ -108,7 +123,7 @@
             </div>
             <div style="padding-left: 100px;">
               <input type="submit" value="Continuar y Finalizar Registro" name="finish" />
-              <input type="submit" value="Continuar y Añadir Acompañante" name="continue" />
+              <input type="submit" value="Continuar y Añadir Adicional" name="continue" />
             </div>
           </form>
         </section>

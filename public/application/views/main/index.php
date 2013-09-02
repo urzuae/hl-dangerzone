@@ -118,6 +118,7 @@
             </div>
             <div>
               <label for="city">Ciudad de Residencia</label>
+              <input type="text" name="city" id="city" value="<?php echo $user['city']; ?>" />
             </div>
             <div>
               <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="<?php echo $user['passport']; ?>" id="passport" />
@@ -160,7 +161,7 @@
             </div>
             <div>
               <label for="email2">Correo electrónico 2</label>
-              <input type="text" name="email2" value="<?php echo $user['email']; ?>" id="email2" />
+              <input type="text" name="email2" value="<?php echo $user['email2']; ?>" id="email2" />
             </div>
             <div>
               <label></label>

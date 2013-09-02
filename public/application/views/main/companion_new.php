@@ -32,6 +32,9 @@
             $('#other_nat').addClass('oculto');
           }
         });
+	$('#relative').change(function() {
+          $(this).val() == "" ? $('#other_relative').removeClass('oculto').val('') : $('#other_relative').addClass('oculto').val($(this).val());
+        });
       });
     </script>
   </head>
@@ -80,7 +83,19 @@
               <input type="text" name="other_nationality" id="other_nationality" value="" />
             </div>
             <div>
-              <label for="relative">Parentesco</label><input type="text" name="relative" value="" id="relative" />
+              <label for="relative">Parentesco</label>
+            <select id="relative">
+                <option <?php if('Cónyuge' == $companion['relative']) echo "selected='selected'"; ?> >Cónyuge</option>
+                <option>Hijo(a)</option>
+                <option>Padre</option>
+                <option>Madre</option>
+                <option>Tío(a)</option>
+                <option>Abuelo(a)</option>
+                <option>Hermano(a)</option>
+                <option>Amigo(a)</option>
+                <option value="">Otro</option>
+              </select>
+              <input type="text" name="relative" id="other_relative" value="" class="oculto" />
             </div>
             <div>
               <label for="passport">No. de Pasaporte</label><input type="text" name="passport" value="" id="passport" />
@@ -105,7 +120,7 @@
             </div>
             <div style="padding-left: 100px;">
               <input type="submit" value="Continuar y Finalizar Registro" name="finish" />
-              <input type="submit" value="Continuar y Añadir Acompañante" name="continue" />
+              <input type="submit" value="Continuar y Añadir Adicional" name="continue" />
             </div>
           </form>
         </section>

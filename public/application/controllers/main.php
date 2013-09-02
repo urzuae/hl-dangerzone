@@ -33,6 +33,7 @@ class Main extends HL_Controller
     $team = $this->input->post('team_level');
     $country = $this->input->post('country');
     $other_country = $this->input->post('other_country');
+    $city = $this->input->post('city');
     $passport = $this->input->post('passport');
     $passport_date = $this->input->post('passport_date');
     $pass_due_date = $this->input->post('passport_due_date');
@@ -42,12 +43,13 @@ class Main extends HL_Controller
     $telephone = $this->input->post('telephone');
     $mobile = $this->input->post('mobile');
     $email = $this->input->post('email');
+    $email2 = $this->input->post('email2');
     
     $params = array('name' => $name, 'paternal_last_name' => $appa, 'maternal_last_name' => $apma, 'gender' => $gender,
       'nationality' => $nationality, 'other_nationality' => $other_nat, 'birthday' => $birthday, 'team_level' => $team,
-      'country' => $country, 'other_country' => $other_country, 'passport' => $passport, 'passport_date' => $passport_date,
+      'country' => $country, 'other_country' => $other_country, 'city' => $city, 'passport' => $passport, 'passport_date' => $passport_date,
       'passport_due_date' => $pass_due_date, 'visa' => $visa, 'visa_date' => $visa_date, 'visa_due_date' => $visa_due_date,
-      'telephone' => $telephone, 'mobile' => $mobile, 'email' => $email, 'status' => 0);
+      'telephone' => $telephone, 'mobile' => $mobile, 'email' => $email, 'email2' => $email2, 'status' => 0);
     $this['users']->update($user['id'], $params);
     redirect(base_url('main/companion/1'));
   }
